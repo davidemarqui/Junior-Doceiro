@@ -12,10 +12,9 @@ commit_count = subprocess.check_output(
     ["git", "rev-list", "--count", "HEAD"]
 ).decode().strip()
 
-caption = f"""🚀 Commit #{commit_count}
+caption = f"""🚀 Dia #{commit_count}
 
-Atualização na branch: {BRANCH}
-Projeto GEPETECO
+Comendo um docinho
 """
 
 # 1. Criar container de mídia
