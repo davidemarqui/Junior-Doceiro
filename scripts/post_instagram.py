@@ -19,7 +19,7 @@ Projeto GEPETECO
 """
 
 # 1. Criar container de mídia
-media_url = f"https://graph.facebook.com/v19.0/{IG_USER_ID}/media"
+media_url = f"https://graph.facebook.com/v24.0/{IG_USER_ID}/media"
 media_payload = {
     "image_url": IMAGE_URL,
     "caption": caption,
@@ -31,7 +31,7 @@ media_response.raise_for_status()
 creation_id = media_response.json()["id"]
 
 # 2. Publicar
-publish_url = f"https://graph.facebook.com/v19.0/{IG_USER_ID}/media_publish"
+publish_url = f"https://graph.facebook.com/v24.0/{IG_USER_ID}/media_publish"
 publish_payload = {
     "creation_id": creation_id,
     "access_token": ACCESS_TOKEN
