@@ -45,7 +45,10 @@ publish_payload = {
 }
 
 publish_response = requests.post(publish_url, data=publish_payload)
-publish_response.raise_for_status()
+if publish_response.status_code != 200:
+    print("Erro ao publicar mídia:")
+    print(publish_response.text)
+    publish_response.raise_for_status()
 
 # 4. Atualizar contador
 data["count"] = current_count
