@@ -12,17 +12,6 @@ TARGET_PROFILE_ID = os.getenv("TARGET_PROFILE_ID")
 GRAPH_API_BASE = "https://graph.facebook.com/v24.0"
 COUNTER_FILE = "post_counter.json"
 
-required_env = {
-    "IG_USER_ID": IG_USER_ID,
-    "IG_ACCESS_TOKEN": ACCESS_TOKEN,
-    "IMAGE_URL": IMAGE_URL,
-    "TARGET_PROFILE_ID": TARGET_PROFILE_ID,
-}
-
-missing_env = [key for key, value in required_env.items() if not value]
-if missing_env:
-    raise EnvironmentError(f"Variáveis de ambiente ausentes: {', '.join(missing_env)}")
-
 
 def api_get(path: str, params: dict | None = None) -> dict:
     response = requests.get(
