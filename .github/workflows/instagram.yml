@@ -31,6 +31,6 @@ jobs:
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IMAGE_URL: ${{ secrets.IMAGE_URL }}
+          IMAGE_URL: "https://raw.githubusercontent.com/davidemarqui/Junior-Doceiro/refs/heads/main/assets/post.jpg"
           TARGET_PROFILE_ID: ${{ secrets.TARGET_PROFILE_ID }}
         run: python scripts/post_instagram.py
