@@ -27,9 +27,10 @@ jobs:
       - name: Instalar dependências
         run: pip install requests
 
-      - name: Publicar no Instagram
+      - name: Publicar e comentar no Instagram
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IMAGE_URL: https://raw.githubusercontent.com/fernandopestillo/Junior-Doceiro/main/assets/post.jpg
+          IMAGE_URL: ${{ secrets.IMAGE_URL }}
+          TARGET_PROFILE_ID: ${{ secrets.TARGET_PROFILE_ID }}
         run: python scripts/post_instagram.py
